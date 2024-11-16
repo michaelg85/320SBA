@@ -26,7 +26,7 @@ export default function App() {
 
     // This will run on the first render but not on subsquent renders
     useEffect(() => {
-      getMovie("Superman II");
+      getMovie("Superman");
     }, []);
 
   return (
@@ -53,6 +53,7 @@ export default function App() {
               placeholder='Enter your movie...'
             />
           </form>
+          <input type="submit" value="submit" />
         </div>
         {/* Right Column */}
         <div className="column right" style={{ color: "skyblue" }}>
@@ -67,6 +68,7 @@ export default function App() {
               placeholder='Enter your movie...'
             />
           </form>
+          <input type="submit" value="submit" />
         </div>
         </div><br/><br/><br/>
 
