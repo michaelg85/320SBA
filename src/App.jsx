@@ -6,7 +6,7 @@ function App() {
 
   return (
     <main>
-      <div className="title" style={{ color: "lightbronze" }}>
+      <div className="title" style={{ color: "yellow" }}>
         <h1>Movie Picker</h1>
       </div>
       <div className="container">
