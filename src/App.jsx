@@ -1,16 +1,40 @@
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import MovieSelector from "./components/MovieSelector";
 import "./App.css";
+// Import our components
+import MovieDisplay from "./components/MovieDisplay";
+import Form from "./components/Form";
 
-function App() {
-  const [count, setCount] = useState(0);
+export default function App() {
+  // Constant with your API Key
+  const apiKey = "98e3fb1f";
+
+  // State to hold movie data
+  const [movie, setMovie] = useState(null);
+
+  // Function to get movies
+  const getMovie = async(searchTerm) => {
+    // Make fetch request and store the response
+    const response = await fetch(
+      `http://www.omdbapi.com/?apikey=${apiKey}&t=${searchTerm}`
+    );
+    // Parse JSON response into a JavaScript object
+    const data = await response.json();
+    // Set the Movie state to the received data
+    setMovie(data);
+  };
+
+    // This will run on the first render but not on subsquent renders
+    useEffect(() => {
+      getMovie("Superman II");
+    }, []);
 
   return (
     <main>
       {/* Title & description */}
       <div className="title" style={{ color: "yellow" }}>
         <h1>Whose Movie?</h1>
-        <h2>Need help choosing a movie?</h2>
+        <h2>Settle it here!</h2>
         <h3>Each enter a movie and let the game decide!</h3>
       </div>
 
@@ -44,12 +68,18 @@ function App() {
             />
           </form>
         </div>
+        </div><br/><br/><br/>
+
+        {/* Movie Selected */}
+        <div className="App">
+          <Form moviesearch={getMovie} />
+          <MovieDisplay movie={movie} />
+        </div>
 
 
-        
-      </div>
+
+      
     </main>
   );
 }
 
-export default App;
