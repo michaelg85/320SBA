@@ -43,7 +43,7 @@ export default function App() {
         {/* Left Column */}
         <div className="column left" style={{ color: "red" }}>
           <h2>The Red Corner</h2>
-          <p>This is the left column.</p>
+          <p>~Godspeed~</p>
           <form>
             <input
               id='text'
@@ -58,7 +58,7 @@ export default function App() {
         {/* Right Column */}
         <div className="column right" style={{ color: "skyblue" }}>
           <h2>The Blue Corner</h2>
-          <p>This is the right column.</p>
+          <p>¡Buena suerte!</p>
           <form>
             <input
               id='text'
