@@ -1,5 +1,4 @@
 import { useState, useEffect } from "react";
-import MovieSelector from "./components/MovieSelector";
 import "./App.css";
 // Import our components
 import MovieDisplay from "./components/MovieDisplay";
