@@ -81,19 +81,19 @@ export default function App() {
       <div className="title" style={{ color: "yellow" }}>
         <h1>Whose Movie?</h1>
         <h2>Settle it here!</h2>
-        <h3>Each enter a movie and let the game decide!</h3>
+        <h3>Each enter a movie and let the game decide...</h3>
       </div>
 
       {/* Red & Blue Columns */}
       <div className="container">
-        {/* Left Column */}
+        {/* Left RED Column */}
         <div className="column left" style={{ color: "red" }}>
           <h2>The Red Corner</h2>
           <p>~Godspeed~</p>
           <RedForm redMoviesearch={getRedMovie} />
           <RedMovieDisplay redMovie={redMovie} />
         </div>
-        {/* Right Column */}
+        {/* Right BLUE Column */}
         <div className="column right" style={{ color: "skyblue" }}>
           <h2>The Blue Corner</h2>
           <p>Good Luck!</p>

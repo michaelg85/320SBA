@@ -24,6 +24,12 @@ Worked on my body in the app.jsx file
 
 Gave the project some style in the App.css file
 
+Created componenets with red and blue forms and displays
+
+Gave each their own search function
+
+
+
         -------
 
 PROJECT ASSIGNMENT DETAILS:
