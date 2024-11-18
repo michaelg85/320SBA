@@ -3,8 +3,19 @@ import "./App.css";
 // Import our components
 import MovieDisplay from "./components/MovieDisplay";
 import Form from "./components/Form";
+import RedMovieDisplay from "./components/RedMovieDisplay";
+import RedForm from "./components/RedForm";
+import BlueMovieDisplay from "./components/BlueMovieDisplay";
+import BlueForm from "./components/BlueForm";
 
 export default function App() {
+
+  //new code:
+
+
+
+//end new code
+
   // Constant with your API Key
   const apiKey = "98e3fb1f";
 
@@ -43,31 +54,15 @@ export default function App() {
         <div className="column left" style={{ color: "red" }}>
           <h2>The Red Corner</h2>
           <p>~Godspeed~</p>
-          <form>
-            <input
-              id='text'
-              // onChange={handleChange}
-              // name='searchParams'
-              // type='text'
-              placeholder='Enter your movie...'
-            />
-          </form>
-          <input type="submit" value="submit" />
+          <RedForm moviesearch={getMovie} />
+          <RedMovieDisplay movie={movie} />
         </div>
         {/* Right Column */}
         <div className="column right" style={{ color: "skyblue" }}>
           <h2>The Blue Corner</h2>
           <p>Good Luck!</p>
-          <form>
-            <input
-              id='text'
-              // onChange={handleChange}
-              // name='searchParams'
-              // type='text'
-              placeholder='Enter your movie...'
-            />
-          </form>
-          <input type="submit" value="submit" />
+          <BlueForm moviesearch={getMovie} />
+          <BlueMovieDisplay movie={movie} />
         </div>
         </div><br/><br/><br/>
 

@@ -1,4 +1,4 @@
-export default function MovieDisplay({ movie }){
+export default function RedMovieDisplay({ movie }){
     // Function to return loaded JSX
     const loaded = () => {
       return (
