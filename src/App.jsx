@@ -21,6 +21,8 @@ export default function App() {
 
   // State to hold movie data
   const [movie, setMovie] = useState(null);
+  const [redMovie, setRedMovie] = useState(null);
+  const [blueMovie, setBlueMovie] = useState(null);
 
   // Function to get movies
   const getMovie = async(searchTerm) => {
@@ -39,6 +41,40 @@ export default function App() {
       getMovie("Superman");
     }, []);
 
+      // Function to get RED movies
+  const getRedMovie = async(searchTerm) => {
+    // Make fetch request and store the response
+    const response = await fetch(
+      `http://www.omdbapi.com/?apikey=${apiKey}&t=${searchTerm}`
+    );
+    // Parse JSON response into a JavaScript object
+    const data = await response.json();
+    // Set the Movie state to the received data
+    setRedMovie(data);
+  };
+
+    // This will run on the first render but not on subsquent renders
+    useEffect(() => {
+      getRedMovie("Trailer Park Boys");
+    }, []);
+
+      // Function to get BLUE movies
+  const getBlueMovie = async(searchTerm) => {
+    // Make fetch request and store the response
+    const response = await fetch(
+      `http://www.omdbapi.com/?apikey=${apiKey}&t=${searchTerm}`
+    );
+    // Parse JSON response into a JavaScript object
+    const data = await response.json();
+    // Set the Movie state to the received data
+    setBlueMovie(data);
+  };
+
+    // This will run on the first render but not on subsquent renders
+    useEffect(() => {
+      getBlueMovie("Wonder Woman");
+    }, []);
+
   return (
     <main>
       {/* Title & description */}
@@ -54,15 +90,15 @@ export default function App() {
         <div className="column left" style={{ color: "red" }}>
           <h2>The Red Corner</h2>
           <p>~Godspeed~</p>
-          <RedForm moviesearch={getMovie} />
-          <RedMovieDisplay movie={movie} />
+          <RedForm redMoviesearch={getRedMovie} />
+          <RedMovieDisplay redMovie={redMovie} />
         </div>
         {/* Right Column */}
         <div className="column right" style={{ color: "skyblue" }}>
           <h2>The Blue Corner</h2>
           <p>Good Luck!</p>
-          <BlueForm moviesearch={getMovie} />
-          <BlueMovieDisplay movie={movie} />
+          <BlueForm blueMoviesearch={getBlueMovie} />
+          <BlueMovieDisplay blueMovie={blueMovie} />
         </div>
         </div><br/><br/><br/>
 

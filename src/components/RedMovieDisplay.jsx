@@ -1,12 +1,12 @@
-export default function RedMovieDisplay({ movie }){
+export default function RedMovieDisplay({ redMovie }){
     // Function to return loaded JSX
     const loaded = () => {
       return (
         <>
-          <h1>{movie.Title}</h1>
-          <h2>{movie.Genre}</h2>
-          <img src={movie.Poster} alt={movie.Title} />
-          <h2>{movie.Year}</h2>
+          <h1>{redMovie.Title}</h1>
+          <h2>{redMovie.Genre}</h2>
+          <img src={redMovie.Poster} alt={redMovie.Title} />
+          <h2>{redMovie.Year}</h2>
         </>
       );
     };
@@ -17,5 +17,5 @@ export default function RedMovieDisplay({ movie }){
     };
   
     // Ternary operator will determine which functions JSX we will return
-    return movie ? loaded() : loading();
+    return redMovie ? loaded() : loading();
   }

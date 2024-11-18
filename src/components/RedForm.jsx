@@ -16,7 +16,7 @@ export default function RedForm (props) {
     // Prevent page from refreshing on form submission
     event.preventDefault();
     // Pass the search term to moviesearch prop, which is App's getMovie function
-    props.moviesearch(formData.searchterm);
+    props.redMoviesearch(formData.searchterm);
   };
 
   return (
