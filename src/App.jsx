@@ -7,6 +7,7 @@ import RedMovieDisplay from "./components/RedMovieDisplay";
 import RedForm from "./components/RedForm";
 import BlueMovieDisplay from "./components/BlueMovieDisplay";
 import BlueForm from "./components/BlueForm";
+import RandomChoiceDisplay from "./components/RandomChoiceDisplay";
 import RandomChoice from "./components/RandomChoice";
 
 export default function App() {
@@ -24,6 +25,7 @@ export default function App() {
   const [movie, setMovie] = useState(null);
   const [redMovie, setRedMovie] = useState(null);
   const [blueMovie, setBlueMovie] = useState(null);
+  const [randomMovie, setRandomMovie] = useState(null);
 
   // Function to get movies
   const getMovie = async(searchTerm) => {
@@ -76,6 +78,23 @@ export default function App() {
       getBlueMovie("Wonder Woman");
     }, []);
 
+    // Function to get RANDOMMOVIE movies
+  const getRandomMovie = async(searchTerm) => {
+    // Make fetch request and store the response
+    const response = await fetch(
+      `http://www.omdbapi.com/?apikey=${apiKey}&t=${searchTerm}`
+    );
+    // Parse JSON response into a JavaScript object
+    const data = await response.json();
+    // Set the Movie state to the received data
+    setRandomMovie(data);
+  };
+
+    // This will run on the first render but not on subsquent renders
+    useEffect(() => {
+      getRandomMovie("Superman");
+    }, []);
+
   return (
     <main>
       {/* Title & description */}
@@ -110,7 +129,8 @@ export default function App() {
         </div> */}
 
         <div>
-          <RandomChoice />
+          <RandomChoice randomMoviesearch={getRandomMovie} />
+          <RandomChoiceDisplay randomMovie={randomMovie} />
         </div>
 
       

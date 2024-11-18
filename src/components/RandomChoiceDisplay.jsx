@@ -6,7 +6,7 @@ export default function RandomChoiceDisplay({ randomMovie }){
           <h1>{randomMovie.Title}</h1>
           <h2>{randomMovie.Genre}</h2>
           <img src={randomMovie.Poster} alt={randomMovie.Title} />
-          <h2>{randomrandomMovie.Year}</h2>
+          <h2>{randomMovie.Year}</h2>
           {/* <h2>{randomMovie.Plot}</h2> */}
         </div>
       );

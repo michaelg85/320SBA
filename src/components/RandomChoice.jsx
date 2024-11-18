@@ -2,7 +2,7 @@ import { useState } from "react";
 import RedForm from "./RedForm";
 import BlueForm from "./BlueForm";
 
-export default function RandomChoice() {
+export default function RandomChoice () {
   const choices = [RedForm, BlueForm];
 
   const [selectedChoice, setSelectedChoice] = useState("");
@@ -13,11 +13,11 @@ export default function RandomChoice() {
   };
 
   return (
-    <div style={{ textAlign: "center", marginTop: "50px" }}>
-      <h1>Random Choice Selector</h1>
-      <button onClick={selectRandomChoice}>Select Random Choice</button>
+    <div>
+      {/* <h1>Random Choice Selector</h1> */}
+      <button onClick={selectRandomChoice}>Choose your movie!</button>
       {selectedChoice && (
-        <h2 style={{ marginTop: "20px" }}>Selected: {selectedChoice}</h2>
+        <h2>Selected: {selectedChoice}</h2>
       )}
     </div>
   );
