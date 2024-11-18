@@ -7,6 +7,7 @@ import RedMovieDisplay from "./components/RedMovieDisplay";
 import RedForm from "./components/RedForm";
 import BlueMovieDisplay from "./components/BlueMovieDisplay";
 import BlueForm from "./components/BlueForm";
+import RandomChoice from "./components/RandomChoice";
 
 export default function App() {
 
@@ -102,13 +103,15 @@ export default function App() {
         </div>
         </div><br/><br/><br/>
 
-        {/* Movie Selected */}
+        {/* Movie Selected
         <div className="App">
           <Form moviesearch={getMovie} />
           <MovieDisplay movie={movie} />
+        </div> */}
+
+        <div>
+          <RandomChoice />
         </div>
-
-
 
       
     </main>
