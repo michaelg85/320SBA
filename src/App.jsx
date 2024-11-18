@@ -57,7 +57,7 @@ export default function App() {
         {/* Right Column */}
         <div className="column right" style={{ color: "skyblue" }}>
           <h2>The Blue Corner</h2>
-          <p>¡Buena suerte!</p>
+          <p>Good Luck!</p>
           <form>
             <input
               id='text'
