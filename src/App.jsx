@@ -22,8 +22,8 @@ export default function App() {
   const [movie, setMovie] = useState(null);
   const [redMovie, setRedMovie] = useState(null);
   const [blueMovie, setBlueMovie] = useState(null);
-  // const [randomChoice, setRandomChoice] = useState(null);
-  // const [selectedMovie, setSelectedMovie] = useState(null);
+  const [randomChoice, setRandomChoice] = useState(null);
+  const [selectedMovie, setSelectedMovie] = useState(null);
   
   // Function to get movies
   const getMovie = async(searchTerm) => {
@@ -79,22 +79,22 @@ export default function App() {
     }, []);
 
 
-  //         // Function to get RANDOM CHOICE movies
-  // const getRandomChoice = async(searchTerm) => {
-  //   // Make fetch request and store the response
-  //   const response = await fetch(
-  //     `http://www.omdbapi.com/?apikey=${apiKey}&t=${searchTerm}`
-  //   );
-  //   // Parse JSON response into a JavaScript object
-  //   const data = await response.json();
-  //   // Set the Movie state to the received data
-  //   setRandomChoice(data);
-  // };
+          // Function to get RANDOM CHOICE movies
+  const getRandomChoice = async(searchTerm) => {
+    // Make fetch request and store the response
+    const response = await fetch(
+      `http://www.omdbapi.com/?apikey=${apiKey}&t=${searchTerm}`
+    );
+    // Parse JSON response into a JavaScript object
+    const data = await response.json();
+    // Set the Movie state to the received data
+    setRandomChoice(data);
+  };
 
-  //   // This will run on the first render but not on subsquent renders
-  //   useEffect(() => {
-  //     getRandomChoice("Superman");
-  //   }, []);
+    // This will run on the first render but not on subsquent renders
+    useEffect(() => {
+      getRandomChoice("Superman");
+    }, []);
 
 
     //   // MOVIESELECTOR
@@ -136,16 +136,18 @@ export default function App() {
         </div>
         </div><br/><br/><br/>
 
+        <div className="random choice">
+          <SelectedChoice  selectedChoice={setRandomChoice} />
+          <RandomChoiceDisplay randomChoice={randomChoice} />
+        </div>
+
         <div>Movie Selected</div>
         <div className="App">
           <Form moviesearch={getMovie} />
           <MovieDisplay movie={movie} />
         </div>
 
-        {/* <div className="random choice">
-          <SelectedChoice  selectedChoice={setRandomChoice} />
-          <RandomChoiceDisplay randomChoice={randomChoice} />
-        </div> */}
+
 
         {/* <div>
          <MovieSelector blueMovie={blueMovieData} redMovie={redMovieData} />
