@@ -79,22 +79,22 @@ export default function App() {
     }, []);
 
 
-          // Function to get RANDOM CHOICE movies
-  const getRandomChoice = async(searchTerm) => {
-    // Make fetch request and store the response
-    const response = await fetch(
-      `http://www.omdbapi.com/?apikey=${apiKey}&t=${searchTerm}`
-    );
-    // Parse JSON response into a JavaScript object
-    const data = await response.json();
-    // Set the Movie state to the received data
-    setRandomChoice(data);
-  };
+  //         // Function to get RANDOM CHOICE movies
+  // const getRandomChoice = async(searchTerm) => {
+  //   // Make fetch request and store the response
+  //   const response = await fetch(
+  //     `http://www.omdbapi.com/?apikey=${apiKey}&t=${searchTerm}`
+  //   );
+  //   // Parse JSON response into a JavaScript object
+  //   const data = await response.json();
+  //   // Set the Movie state to the received data
+  //   setRandomChoice(data);
+  // };
 
-    // This will run on the first render but not on subsquent renders
-    useEffect(() => {
-      getRandomChoice("Superman");
-    }, []);
+  //   // This will run on the first render but not on subsquent renders
+  //   useEffect(() => {
+  //     getRandomChoice("Superman");
+  //   }, []);
 
 
     //   // MOVIESELECTOR
