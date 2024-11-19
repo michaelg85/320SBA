@@ -7,16 +7,10 @@ import RedMovieDisplay from "./components/RedMovieDisplay";
 import RedForm from "./components/RedForm";
 import BlueMovieDisplay from "./components/BlueMovieDisplay";
 import BlueForm from "./components/BlueForm";
-import RandomChoiceDisplay from "./components/RandomChoiceDisplay";
 import RandomChoice from "./components/RandomChoice";
+import RandomChoiceDisplay from "./components/RandomChoiceDisplay";
 
 export default function App() {
-
-  //new code:
-
-
-
-//end new code
 
   // Constant with your API Key
   const apiKey = "98e3fb1f";
@@ -25,7 +19,7 @@ export default function App() {
   const [movie, setMovie] = useState(null);
   const [redMovie, setRedMovie] = useState(null);
   const [blueMovie, setBlueMovie] = useState(null);
-  const [randomMovie, setRandomMovie] = useState(null);
+  const [randomChoice, setRandomChoice] = useState(null);
 
   // Function to get movies
   const getMovie = async(searchTerm) => {
@@ -79,7 +73,7 @@ export default function App() {
     }, []);
 
     // Function to get RANDOMMOVIE movies
-  const getRandomMovie = async(searchTerm) => {
+  const getRandomChoice = async(searchTerm) => {
     // Make fetch request and store the response
     const response = await fetch(
       `http://www.omdbapi.com/?apikey=${apiKey}&t=${searchTerm}`
@@ -87,12 +81,12 @@ export default function App() {
     // Parse JSON response into a JavaScript object
     const data = await response.json();
     // Set the Movie state to the received data
-    setRandomMovie(data);
+    setRandomChoice(data);
   };
 
     // This will run on the first render but not on subsquent renders
     useEffect(() => {
-      getRandomMovie("Superman");
+      getRandomChoice("Superman");
     }, []);
 
   return (
@@ -129,8 +123,8 @@ export default function App() {
         </div> */}
 
         <div>
-          <RandomChoice randomMoviesearch={getRandomMovie} />
-          <RandomChoiceDisplay randomMovie={randomMovie} />
+          <RandomChoice />
+          <RandomChoiceDisplay />
         </div>
 
       

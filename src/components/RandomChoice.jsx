@@ -1,9 +1,14 @@
 import { useState } from "react";
 import RedForm from "./RedForm";
 import BlueForm from "./BlueForm";
+import RedMovieDisplay from "./RedMovieDisplay";
+import BlueMovieDisplay from "./BlueMovieDisplay";
+
+const Choice1 = RedMovieDisplay
+const Choice2 = BlueMovieDisplay
 
 export default function RandomChoice () {
-  const choices = [RedForm, BlueForm];
+  const choices = [Choice1, Choice2];
 
   const [selectedChoice, setSelectedChoice] = useState("");
 
