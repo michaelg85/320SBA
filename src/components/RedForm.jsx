@@ -1,6 +1,6 @@
-import { useState, useEffect } from "react";
+import { useState } from "react";
 
-export default function RedForm (props) {
+export default function RedForm(props) {
   // State to hold the data of our form
   const [formData, setFormData] = useState({
     searchterm: "",

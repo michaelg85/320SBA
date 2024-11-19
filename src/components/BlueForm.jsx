@@ -1,6 +1,6 @@
-import { useState, useEffect } from "react";
+import { useState } from "react";
 
-export default function BlueForm (props) {
+export default function BlueForm(props) {
   // State to hold the data of our form
   const [formData, setFormData] = useState({
     searchterm: "",

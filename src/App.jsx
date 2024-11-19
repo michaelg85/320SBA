@@ -7,8 +7,8 @@ import RedMovieDisplay from "./components/RedMovieDisplay";
 import RedForm from "./components/RedForm";
 import BlueMovieDisplay from "./components/BlueMovieDisplay";
 import BlueForm from "./components/BlueForm";
-import SelectedChoice from "./components/RandomChoice";
-import RandomChoiceDisplay from "./components/RandomChoiceDisplay";
+import SelectedChoice from "./components/RandomChoice/RandomChoice";
+import RandomChoiceDisplay from "./components/RandomChoiceDisplay/RandomChoiceDisplay";
 
 export default function App() {
 
@@ -19,7 +19,6 @@ export default function App() {
   const [movie, setMovie] = useState(null);
   const [redMovie, setRedMovie] = useState(null);
   const [blueMovie, setBlueMovie] = useState(null);
-  // const [randomChoice, ] = useState(null);
   const [randomChoice, setRandomChoice] = useState(null);
   
   // Function to get movies
@@ -125,7 +124,7 @@ export default function App() {
         </div> */}
 
         <div className="random choice">
-          <SelectedChoice  randomChoice={setRandomChoice} />
+          <SelectedChoice  selectedChoice={setRandomChoice} />
           <RandomChoiceDisplay randomChoice={randomChoice} />
         </div>
 
