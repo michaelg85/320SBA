@@ -9,6 +9,9 @@ import BlueMovieDisplay from "./components/BlueMovieDisplay";
 import BlueForm from "./components/BlueForm";
 import SelectedChoice from "./components/RandomChoice/RandomChoice";
 import RandomChoiceDisplay from "./components/RandomChoiceDisplay/RandomChoiceDisplay";
+// import MovieSelector from "./components/MovieSelector";
+// import {redMovieData, blueMovieData} from "./utilities/data.mjs";
+
 
 export default function App() {
 
@@ -19,7 +22,8 @@ export default function App() {
   const [movie, setMovie] = useState(null);
   const [redMovie, setRedMovie] = useState(null);
   const [blueMovie, setBlueMovie] = useState(null);
-  const [randomChoice, setRandomChoice] = useState(null);
+  // const [randomChoice, setRandomChoice] = useState(null);
+  // const [selectedMovie, setSelectedMovie] = useState(null);
   
   // Function to get movies
   const getMovie = async(searchTerm) => {
@@ -38,6 +42,7 @@ export default function App() {
       getMovie("Superman");
     }, []);
 
+
       // Function to get RED movies
   const getRedMovie = async(searchTerm) => {
     // Make fetch request and store the response
@@ -54,6 +59,7 @@ export default function App() {
     useEffect(() => {
       getRedMovie("Trailer Park Boys");
     }, []);
+
 
       // Function to get BLUE movies
   const getBlueMovie = async(searchTerm) => {
@@ -72,6 +78,7 @@ export default function App() {
       getBlueMovie("Wonder Woman");
     }, []);
 
+
           // Function to get RANDOM CHOICE movies
   const getRandomChoice = async(searchTerm) => {
     // Make fetch request and store the response
@@ -88,6 +95,18 @@ export default function App() {
     useEffect(() => {
       getRandomChoice("Superman");
     }, []);
+
+
+    //   // MOVIESELECTOR
+    // const handleRandomSelect = () => {
+    //   // Check if both movies are selected
+    //   if (blueMovie && redMovie) {
+    //     // Choose one at random
+    //     const movies = [blueMovie, redMovie];
+    //     const randomMovie = movies[Math.floor(Math.random() * movies.length)];
+    //     setSelectedMovie(randomMovie);
+    //   }
+    // };
 
 
   return (
@@ -117,16 +136,20 @@ export default function App() {
         </div>
         </div><br/><br/><br/>
 
-        {/* Movie Selected
+        <div>Movie Selected</div>
         <div className="App">
           <Form moviesearch={getMovie} />
           <MovieDisplay movie={movie} />
-        </div> */}
+        </div>
 
-        <div className="random choice">
+        {/* <div className="random choice">
           <SelectedChoice  selectedChoice={setRandomChoice} />
           <RandomChoiceDisplay randomChoice={randomChoice} />
-        </div>
+        </div> */}
+
+        {/* <div>
+         <MovieSelector blueMovie={blueMovieData} redMovie={redMovieData} />
+        </div> */}
 
       
     </main>
