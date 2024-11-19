@@ -121,25 +121,22 @@ export default function App() {
       {/* Red & Blue Columns */}
       <div className="container">
         {/* Left RED Column */}
-        <div className="column left" style={{ color: "red" }}>
-          <h2>The Red Corner</h2>
-          <p>~Godspeed~</p>
+        <div>
           <RedForm redMoviesearch={getRedMovie} />
           <RedMovieDisplay redMovie={redMovie} />
         </div>
         {/* Right BLUE Column */}
-        <div className="column right" style={{ color: "skyblue" }}>
-          <h2>The Blue Corner</h2>
-          <p>Good Luck!</p>
+        <div>
           <BlueForm blueMoviesearch={getBlueMovie} />
           <BlueMovieDisplay blueMovie={blueMovie} />
         </div>
         </div><br/><br/><br/>
 
+        {/* Random Choice */}
         <div className="random choice">
           <SelectedChoice  selectedChoice={setRandomChoice} />
           <RandomChoiceDisplay randomChoice={randomChoice} />
-        </div>
+        </div><br/><br/><br/>
 
         <div>Movie Selected</div>
         <div className="App">

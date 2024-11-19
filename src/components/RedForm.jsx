@@ -20,7 +20,9 @@ export default function RedForm(props) {
   };
 
   return (
-    <div>
+    <div className="column left" style={{ color: "red" }}>
+      <h2>The Red Corner</h2>
+      <p>~Godspeed~</p>
       <form onSubmit={handleSubmit}>
         <input
           type="text"

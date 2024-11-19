@@ -20,7 +20,9 @@ export default function BlueForm(props) {
   };
 
   return (
-    <div>
+    <div className="column right" style={{ color: "skyblue" }}>
+      <h2>The Blue Corner</h2>
+      <p>Good Luck!</p>
       <form onSubmit={handleSubmit}>
         <input
           type="text"
