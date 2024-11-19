@@ -19,7 +19,7 @@ const RandomChoice = () => {
     <div>
       {/* <h1>Random Choice Selector</h1> */}
       <button onClick={selectRandomChoice}>Choose your movie!</button>
-      {selectedChoice && <h2>Selected: {RandomChoice}</h2>}
+      {selectedChoice && <h2>Winner! {RandomChoice}</h2>}
     </div>
   );
 }

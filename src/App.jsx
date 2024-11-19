@@ -1,8 +1,8 @@
 import { useState, useEffect } from "react";
 import "./App.css";
 // Import our components
-import MovieDisplay from "./components/MovieDisplay";
-import Form from "./components/Form";
+// import MovieDisplay from "./components/MovieDisplay";
+// import Form from "./components/Form";
 import RedMovieDisplay from "./components/RedMovieDisplay";
 import RedForm from "./components/RedForm";
 import BlueMovieDisplay from "./components/BlueMovieDisplay";
@@ -23,7 +23,7 @@ export default function App() {
   const [redMovie, setRedMovie] = useState(null);
   const [blueMovie, setBlueMovie] = useState(null);
   const [randomChoice, setRandomChoice] = useState(null);
-  const [selectedMovie, setSelectedMovie] = useState(null);
+  // const [selectedMovie, setSelectedMovie] = useState(null);
   
   // Function to get movies
   const getMovie = async(searchTerm) => {
@@ -138,11 +138,11 @@ export default function App() {
           <RandomChoiceDisplay randomChoice={randomChoice} />
         </div><br/><br/><br/>
 
-        <div>Movie Selected</div>
+        {/* <div>Movie Selected</div>
         <div className="App">
           <Form moviesearch={getMovie} />
           <MovieDisplay movie={movie} />
-        </div>
+        </div> */}
 
 
 
