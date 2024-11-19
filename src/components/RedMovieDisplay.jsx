@@ -14,7 +14,7 @@ export default function RedMovieDisplay({ redMovie }){
   
     // Function to return loading JSX
     const loading = () => {
-      return <h1>No Movie to Display</h1>;
+      return <h1>{redMovie}</h1>;
     };
   
     // Ternary operator will determine which functions JSX we will return

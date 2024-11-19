@@ -10,7 +10,7 @@ const Choice2 = BlueMovieDisplay
 export default function RandomChoice () {
   const choices = [Choice1, Choice2];
 
-  const [selectedChoice, setSelectedChoice] = useState("");
+  const [selectedChoice, setSelectedChoice] = useState('');
 
   const selectRandomChoice = () => {
     const randomIndex = Math.floor(Math.random() * choices.length);
@@ -22,7 +22,8 @@ export default function RandomChoice () {
       {/* <h1>Random Choice Selector</h1> */}
       <button onClick={selectRandomChoice}>Choose your movie!</button>
       {selectedChoice && (
-        <h2>Selected: {selectedChoice}</h2>
+        <h2>Selected: {RandomChoice}</h2>
+
       )}
     </div>
   );

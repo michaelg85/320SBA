@@ -7,7 +7,7 @@ import RedMovieDisplay from "./components/RedMovieDisplay";
 import RedForm from "./components/RedForm";
 import BlueMovieDisplay from "./components/BlueMovieDisplay";
 import BlueForm from "./components/BlueForm";
-import RandomChoice from "./components/RandomChoice";
+import SelectedChoice from "./components/RandomChoice";
 import RandomChoiceDisplay from "./components/RandomChoiceDisplay";
 
 export default function App() {
@@ -19,8 +19,9 @@ export default function App() {
   const [movie, setMovie] = useState(null);
   const [redMovie, setRedMovie] = useState(null);
   const [blueMovie, setBlueMovie] = useState(null);
+  // const [randomChoice, ] = useState(null);
   const [randomChoice, setRandomChoice] = useState(null);
-
+  
   // Function to get movies
   const getMovie = async(searchTerm) => {
     // Make fetch request and store the response
@@ -72,7 +73,7 @@ export default function App() {
       getBlueMovie("Wonder Woman");
     }, []);
 
-    // Function to get RANDOMMOVIE movies
+          // Function to get RANDOM CHOICE movies
   const getRandomChoice = async(searchTerm) => {
     // Make fetch request and store the response
     const response = await fetch(
@@ -88,6 +89,7 @@ export default function App() {
     useEffect(() => {
       getRandomChoice("Superman");
     }, []);
+
 
   return (
     <main>
@@ -122,9 +124,9 @@ export default function App() {
           <MovieDisplay movie={movie} />
         </div> */}
 
-        <div>
-          <RandomChoice />
-          <RandomChoiceDisplay />
+        <div className="random choice">
+          <SelectedChoice  randomChoice={setRandomChoice} />
+          <RandomChoiceDisplay randomChoice={randomChoice} />
         </div>
 
       
