@@ -8,9 +8,6 @@ import BlueMovieDisplay from "./components/BlueMovieDisplay";
 import BlueForm from "./components/BlueForm";
 import SelectedChoice from "./components/RandomChoice/RandomChoice";
 import RandomChoiceDisplay from "./components/RandomChoiceDisplay/RandomChoiceDisplay";
-// import MovieSelector from "./components/MovieSelector";
-// import {redMovieData, blueMovieData} from "./utilities/data.mjs";
-
 
 export default function App() {
 
@@ -41,7 +38,6 @@ export default function App() {
       getMovie("Superman");
     }, []);
 
-
       // Function to get RED movies
   const getRedMovie = async(searchTerm) => {
     // Make fetch request and store the response
@@ -58,7 +54,6 @@ export default function App() {
     useEffect(() => {
       getRedMovie("Trailer Park Boys");
     }, []);
-
 
       // Function to get BLUE movies
   const getBlueMovie = async(searchTerm) => {
@@ -77,7 +72,6 @@ export default function App() {
       getBlueMovie("Wonder Woman");
     }, []);
 
-
           // Function to get RANDOM CHOICE movies
   const getRandomChoice = async(searchTerm) => {
     // Make fetch request and store the response
@@ -94,19 +88,6 @@ export default function App() {
     useEffect(() => {
       getRandomChoice("Superman");
     }, []);
-
-
-    //   // MOVIESELECTOR
-    // const handleRandomSelect = () => {
-    //   // Check if both movies are selected
-    //   if (blueMovie && redMovie) {
-    //     // Choose one at random
-    //     const movies = [blueMovie, redMovie];
-    //     const randomMovie = movies[Math.floor(Math.random() * movies.length)];
-    //     setSelectedMovie(randomMovie);
-    //   }
-    // };
-
 
   return (
     <main>
@@ -133,7 +114,7 @@ export default function App() {
 
         {/* Random Choice */}
         <div className="random choice">
-          <SelectedChoice  selectedChoice={setRandomChoice} />
+          <SelectedChoice redMovie={redMovie} blueMovie={blueMovie} selectedChoice={setRandomChoice} />
           <RandomChoiceDisplay randomChoice={randomChoice} />
         </div><br/><br/><br/>
 
@@ -143,13 +124,6 @@ export default function App() {
           <Form moviesearch={getMovie} />
           <MovieDisplay movie={movie} />
         </div>
-
-
-
-        {/* <div>
-         <MovieSelector blueMovie={blueMovieData} redMovie={redMovieData} />
-        </div> */}
-
       
     </main>
   );

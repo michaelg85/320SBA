@@ -2,12 +2,13 @@ import { useState } from "react";
 import RedMovieDisplay from "../RedMovieDisplay";
 import BlueMovieDisplay from "../BlueMovieDisplay";
 
-const RandomChoice = () => {
+const RandomChoice = ({redMovie, blueMovie}) => {
   const [selectedChoice, setSelectedChoice] = useState("");
 
   const selectRandomChoice = () => {
-    const choices = [<RedMovieDisplay />, <BlueMovieDisplay />];
+    const choices = [<RedMovieDisplay redMovie={redMovie} />, <BlueMovieDisplay blueMovie={blueMovie} />];
     const randomIndex = Math.floor(Math.random() * choices.length);
+    
     setSelectedChoice(choices[randomIndex]);
   };
 
@@ -20,7 +21,7 @@ const RandomChoice = () => {
       >
         Click to reveal your destiny!
       </button>
-      {selectedChoice && <h1>The Winner is {selectedChoice}</h1>}
+      {selectedChoice && <><h1>The Winner is</h1>{selectedChoice}</>}
     </div>
     // <h2>Selected</h2>
     // {selectedChoice}
@@ -29,18 +30,3 @@ const RandomChoice = () => {
 
 export default RandomChoice;
 
-// // Alternative return statement
-// return (
-//   <div>
-//     {/* <h1>Random Choice Selector</h1> */}
-//     <button onClick={selectRandomChoice}>Choose your movie!</button>
-//     {selectedChoice && (
-//       <div>
-//         <h2>The Champion!</h2>
-//         {/* Render the selected choice as a component */}
-//         {selectedChoice && <selectedChoice />}
-//       </div>
-//     )}
-//   </div>
-// );
-// };
