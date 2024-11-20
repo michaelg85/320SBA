@@ -21,6 +21,7 @@ export default function Form (props) {
 
   return (
     <div>
+      <h1 style={{ color: "green" }}>Movie Search</h1>
       <form onSubmit={handleSubmit}>
         <input
           type="text"
