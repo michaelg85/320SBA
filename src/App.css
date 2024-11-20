@@ -3,11 +3,12 @@
   margin: 0 auto;
   padding: 2rem;
   text-align: center;
+  flex-wrap: wrap;
 }
 
 .container {
   display: flex;
-  gap: 50px; /* Adds space between columns */
+  gap: 150px; /* Adds space between columns */
 }
 
 /* .form {

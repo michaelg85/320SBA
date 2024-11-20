@@ -14,7 +14,7 @@ const RandomChoice = ({redMovie, blueMovie}) => {
 
   return (
     <div style={{ color: "yellow", fontStyle: "italic" }}>
-      <h1>Random Choice Selector</h1>
+      <h1>Decision Time</h1>
       <button
         onClick={selectRandomChoice}
         style={{ color: "yellow", fontStyle: "italic" }}
