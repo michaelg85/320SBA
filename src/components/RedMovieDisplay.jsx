@@ -2,7 +2,7 @@ export default function RedMovieDisplay({ redMovie }) {
   // Function to return loaded JSX
   const loaded = () => {
     return (
-      <div>
+      <div style={{ color: "red" }}>
         <h1>{redMovie.Title}</h1>
         <h2>{redMovie.Genre}</h2>
         <img src={redMovie.Poster} alt={redMovie.Title} />

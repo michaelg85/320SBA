@@ -2,7 +2,7 @@ export default function BlueMovieDisplay({ blueMovie }) {
   // Function to return loaded JSX
   const loaded = () => {
     return (
-      <div>
+      <div style={{ color: "skyblue" }}>
         <h1>{blueMovie.Title}</h1>
         <h2>{blueMovie.Genre}</h2>
         <img src={blueMovie.Poster} alt={blueMovie.Title} />

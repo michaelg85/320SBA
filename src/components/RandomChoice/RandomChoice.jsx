@@ -15,12 +15,31 @@ const RandomChoice = () => {
   };
 
   return (
-    <div>
+    <div style={{ color: "yellow", fontStyle: "italic" }}>
       {/* <h1>Random Choice Selector</h1> */}
-      <button onClick={selectRandomChoice}>Choose your movie!</button>
-      {selectedChoice && <h2>The Champion! {RandomChoice}</h2>}
+      <button onClick={selectRandomChoice} style={{ color: "yellow", fontStyle: "italic" }}>Click to reveal your destiny!</button>
+      {selectedChoice && <h1>The Winner is {RandomChoice}</h1>}
     </div>
   );
 };
 
 export default RandomChoice;
+
+
+
+
+// // Alternative return statement
+// return (
+//   <div>
+//     {/* <h1>Random Choice Selector</h1> */}
+//     <button onClick={selectRandomChoice}>Choose your movie!</button>
+//     {selectedChoice && (
+//       <div>
+//         <h2>The Champion!</h2>
+//         {/* Render the selected choice as a component */}
+//         {selectedChoice && <selectedChoice />}
+//       </div>
+//     )}
+//   </div>
+// );
+// };
