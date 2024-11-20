@@ -113,9 +113,9 @@ export default function App() {
     <main>
       {/* Title & description */}
       <div className="title" style={{ color: "yellow" }}>
-        <h1>Whose Movie?</h1>
-        <h2>Settle it here!</h2>
-        <h3>Each enter a movie and let the game decide...</h3>
+        <h1 style={{ fontSize: "75px"}}>Whose Movie?!</h1>
+        <h1>Settle it here!</h1>
+        <h2>Each enter a movie and let the game decide...</h2>
       </div>
 
       {/* Red & Blue Columns */}
