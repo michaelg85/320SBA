@@ -28,6 +28,15 @@ Created componenets with red and blue forms and displays
 
 Gave each their own search function
 
+Created a function to randomly choose between red movie and blue movie
+
+Created a search component to search for movies at the bottom of the page
+
+Updated the syling
+
+Updated the wording/phrasing of the site text
+
+Cleaned up my code
 
 
         -------
